@@ -48,3 +48,14 @@ namespace Runtime.Messaging
         }
     }
 }
+
+public interface IMessage {}
+
+public interface IMessageHandler
+{
+}
+
+public interface IMessageHandler<in T> : IMessageHandler
+{
+    public void Handle(T message);
+}
